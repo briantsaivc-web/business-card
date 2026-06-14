@@ -1,0 +1,20 @@
+# 絕對不能 commit 的憑證
+.env
+config/service_account.json
+.streamlit/secrets.toml
+
+# 資料（本機備份保留，不上 GitHub）
+data/contacts.db
+data/BusinessCards/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
