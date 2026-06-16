@@ -270,3 +270,8 @@ def export_df() -> pd.DataFrame:
     if not rows:
         return pd.DataFrame(columns=SUPABASE_FIELDS)
     return pd.DataFrame(rows)[SUPABASE_FIELDS]
+
+def delete_contact(contact_id: str):
+    conn = get_conn()
+    conn.execute("DELETE FROM contacts WHERE id = ?", (contact_id,))
+    conn.commit()
