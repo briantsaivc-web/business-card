@@ -15,7 +15,7 @@ import streamlit as st
 from PIL import Image
 from dotenv import load_dotenv
 
-from db import init_db, upsert_contact, search_contacts, find_duplicates, export_df, get_contact, delete_contact
+from db import init_db, upsert_contact, search_contacts, find_duplicates, export_df, delete_contact
 
 load_dotenv()
 init_db()
