@@ -271,7 +271,7 @@ def export_df() -> pd.DataFrame:
         return pd.DataFrame(columns=SUPABASE_FIELDS)
     return pd.DataFrame(rows)[SUPABASE_FIELDS]
 
-def delete_contact(contact_id: str):
-    conn = get_conn()
-    conn.execute("DELETE FROM contacts WHERE id = ?", (contact_id,))
-    conn.commit()
+def delete_contact(contact_id: str) -> None:
+    """刪除一筆聯絡人（以 id 為主鍵）。"""
+    sb = get_supabase()
+    sb.table("contacts").delete().eq("id", contact_id).execute()
